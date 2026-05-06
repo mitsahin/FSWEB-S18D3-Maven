@@ -1,13 +1,11 @@
 package com.workintech.sqlrelations.entity;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
 @Entity
 @Table(name = "doctor")
 public class Doctor {
@@ -17,4 +15,46 @@ public class Doctor {
     private String name;
     private String surname;
     private String proficiency;
+
+    public Doctor() {
+    }
+
+    public Doctor(long id, String name, String surname, String proficiency) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.proficiency = proficiency;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getProficiency() {
+        return proficiency;
+    }
+
+    public void setProficiency(String proficiency) {
+        this.proficiency = proficiency;
+    }
 }
